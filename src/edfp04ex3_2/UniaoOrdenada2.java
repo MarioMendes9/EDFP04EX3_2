@@ -27,39 +27,26 @@ public class UniaoOrdenada2{
     }
 
     
-    public void une(){
-        
-       while(!a1.isEmpty() || !a2.isEmpty()){
-           int n2;
-           int n1;
-           
 
-           
-           if(!a2.isEmpty() && !a1.isEmpty()){
-                n1=a1.dequeue();
-                n2=a2.dequeue();
-            if(n2<n1){
-               
-               
-               this.ordenada.enqueue(n2);
-               this.ordenada.enqueue(n1);
-               
-           }
-           else{
-               this.ordenada.enqueue(n1);
-               this.ordenada.enqueue(n2);
-           }}
-           else{
-               if(!a1.isEmpty() && a2.isEmpty()){
-                n1=a1.dequeue();
-               this.ordenada.enqueue(n1);
-           }
-               else{
-                   n2=a2.dequeue();
-                   this.ordenada.enqueue(n2);
-               }
-           }
-       } 
+    
+    public void une(){
+        while(!a1.isEmpty() && !a2.isEmpty()){
+            int n;
+            if(a1.first()<a2.first()){
+                n=a1.dequeue();
+            }
+            else{
+                n=a2.dequeue();
+                
+            }
+            this.ordenada.enqueue(n);
+        }
+       while(!a1.isEmpty()){
+           this.ordenada.enqueue(a1.dequeue());
+       }
+       while(!a2.isEmpty()){
+           this.ordenada.enqueue(a2.dequeue());
+       }
     }
 
     public QueueADT<Integer> getOrdenada() {

@@ -17,10 +17,12 @@ public class EDFP04EX3_2 {
     public static void main(String[] args) {
         //QueueADT<Integer> a1=new LinkedQueue<>();
         QueueADT<Integer> a1=new CircularArrayQueue<>();
-        a1.enqueue(2);
-        a1.enqueue(4);
-        a1.enqueue(8);
+//        a1.enqueue(2);
+//        a1.enqueue(4);
+//        a1.enqueue(8);
         a1.enqueue(10);
+         a1.enqueue(11);
+          a1.enqueue(12);
         
         //QueueADT<Integer> a2=new LinkedQueue<>();
         QueueADT<Integer> a2=new CircularArrayQueue<>();
